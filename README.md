@@ -55,7 +55,7 @@ Ce projet est une application front-end construite avec Next.js, TypeScript, et 
 
 - **app**
   - `page.tsx` : Page d'accueil qui affiche la liste des contacts et un bouton pour ajouter un nouveau contact.
-  - `contacts/[id].tsx` : Page de détail pour un contact spécifique, avec des options pour éditer ou supprimer le contact.
+  - `contacts/[id]/page.tsx` : Page de détail pour un contact spécifique, avec des options pour éditer ou supprimer le contact.
 - **components/**
   - `ContactForm.tsx` : Formulaire pour ajouter ou éditer un contact.
   - `ContactList.tsx` : Liste des contacts avec options de recherche et de sélection des champs affichés.
@@ -85,7 +85,7 @@ Ce projet est une application front-end construite avec Next.js, TypeScript, et 
    }
    ```
 
-3. Ajoutez les directives Tailwind CSS à votre fichier CSS principal (`./styles/globals.css` ou un fichier similaire) :
+3. Ajoutez les directives Tailwind CSS à votre fichier CSS principal (`./app/taillwind.css` ou un fichier similaire) :
 
    ```css
    @tailwind base;
