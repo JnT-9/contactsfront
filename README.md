@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Projet Contacts - Front-End
 
-## Getting Started
+Ce projet est une application front-end construite avec Next.js, TypeScript, et Tailwind CSS. Il permet de gérer une liste de contacts avec des fonctionnalités de création, modification, et suppression de contacts.
 
-First, run the development server:
+## Prérequis
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Node.js](https://nodejs.org/) (version 20 ou supérieure recommandée)
+- [Yarn](https://classic.yarnpkg.com/en/docs/install) ou [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clonez le dépôt :
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   `git clone https://github.com/JnT-9/contactsfront.git`
 
-## Learn More
+   `cd contactsfront`
 
-To learn more about Next.js, take a look at the following resources:
+2. Installez les dépendances :
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   Avec **Yarn** :
+   `yarn install`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   Avec **npm** :
+   `npm install`
 
-## Deploy on Vercel
+## Lancer le projet
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Démarrez le serveur de développement :
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   Avec **Yarn** :
+   `yarn dev`
+
+   Avec **npm** :
+   `npm run dev`
+
+   Le projet sera disponible à l'adresse [http://localhost:3000](http://localhost:3000).
+
+2. Construisez le projet pour la production (optionnel) :
+
+   Avec **Yarn** :
+   `yarn build`
+
+   Avec **npm** :
+   `npm run build`
+
+   Vous pouvez ensuite démarrer le serveur de production avec :
+
+   Avec **Yarn** :
+   `yarn start`
+
+   Avec **npm** :
+   `npm run start`
+
+## Structure du projet
+
+- **app**
+  - `page.tsx` : Page d'accueil qui affiche la liste des contacts et un bouton pour ajouter un nouveau contact.
+  - `contacts/[id].tsx` : Page de détail pour un contact spécifique, avec des options pour éditer ou supprimer le contact.
+- **components/**
+  - `ContactForm.tsx` : Formulaire pour ajouter ou éditer un contact.
+  - `ContactList.tsx` : Liste des contacts avec options de recherche et de sélection des champs affichés.
+- **type.ts** : Déclaration des types TypeScript utilisés dans le projet.
+- **tailwind.css** : Fichier CSS pour la configuration de Tailwind CSS.
+
+## Configuration de Tailwind CSS
+
+1. Initialisation de Tailwind CSS (si non fait automatiquement) :
+
+   `npx tailwindcss init`
+
+2. Configurez le fichier `tailwind.config.js` pour inclure les chemins des fichiers où Tailwind CSS sera utilisé :
+
+   ```js
+   /** @type {import('tailwindcss').Config} */
+   module.exports = {
+     content: [
+       "./app/**/*.{js,ts,jsx,tsx}",
+       "./pages/**/*.{js,ts,jsx,tsx}",
+       "./components/**/*.{js,ts,jsx,tsx}",
+     ],
+     theme: {
+       extend: {},
+     },
+     plugins: [],
+   }
+   ```
+
+3. Ajoutez les directives Tailwind CSS à votre fichier CSS principal (`./styles/globals.css` ou un fichier similaire) :
+
+   ```css
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   ```
