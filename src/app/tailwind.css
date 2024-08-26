@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Définition des variables de couleur pour les thèmes clair et sombre */
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
 
+/* Style pour le thème sombre */
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -16,6 +18,7 @@
   }
 }
 
+/* Styles globaux du corps */
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -26,8 +29,10 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+/* Définition d'un utilitaire personnalisé */
 @layer utilities {
   .text-balance {
+    /* Assurez-vous que cette propriété est prise en charge par les navigateurs que vous ciblez */
     text-wrap: balance;
   }
 }
